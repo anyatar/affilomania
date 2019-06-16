@@ -17,6 +17,7 @@
 5. Import the default database:
    mysql -u username -p affilomania < affilomania.sql
 6. Add a new vhost to Apache:
+```
 	<VirtualHost *:20080>
 	DocumentRoot "/path/to/project/public"
 	<Directory "/path/to/project/public">
@@ -25,7 +26,9 @@
 	   Require all granted
 	  </Directory>
 	</VirtualHost>
+```
    It's also possible to change the existing default vhost to these settings.
+
 7. Restart Apache
 8. Open http://server_address:20080/
 9. Enjoy!
