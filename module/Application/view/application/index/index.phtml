@@ -1,0 +1,38 @@
+<div ng-controller="UsersController">
+     
+   	 <div class="mb-4">
+   	 	<button type="button" title="Add a New User" ng-click="createOrUpdateUserForm('create')" class="btn btn-primary btn-lg">Add</button>
+   	 </div>
+   	<div class="table-responsive">
+      <table class="table table-bordered table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>#</th>
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>Email</th>
+              <th>Username</th>
+              <th>Password</th>
+              <th>CreatedAt</th>
+              <th>LastUpdated</th>
+              <th>Active</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-click="createOrUpdateUserForm('update', this)" ng-repeat="user in users">
+              <th scope="row">{{user.Id}}</th>
+              <td>{{user.first_name}}</td>
+              <td>{{user.last_name}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.username}}</td>
+              <td ng-attr-title="{{user.password}}">*****</td>
+              <td>{{user.created_at}}</td>
+              <td>{{user.last_update_time}}</td>
+              <td>{{user.is_active}}</td>
+            </tr>
+         </tbody>
+    </table>
+    </div>
+    
+</div>
+
